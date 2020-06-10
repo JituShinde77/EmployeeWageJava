@@ -7,13 +7,13 @@ public class EmployeeWage{
 		int WAGE_PER_HOUR = 20;
 
 		// Variables
-		int dailyWage = 0;
 		int empHrs = 0;
 		int totalWage = 0;
-
+		int totalWorkingHrs = 0;
+		int totalWorkingDays = 0;
 		System.out.println("Welcome Wage Employee..");
 		//Computraion
-		for (int i = 0 ; i< 20; i++)
+		while( totalWorkingHrs <= 100 && totalWorkingDays <=20)
 		{
 			int empCheck = (int)Math.floor(Math.random() * 10 ) %3;
 			switch (empCheck){
@@ -27,10 +27,10 @@ public class EmployeeWage{
 					empHrs = 8;
 					break;
 			}
-
-			dailyWage = WAGE_PER_HOUR * empHrs;
-			totalWage = totalWage + dailyWage ;
+			++totalWorkingDays;
+			totalWorkingHrs= totalWorkingHrs + empHrs;
 		}
-		System.out.println("Month Wage=" + totalWage );
+		totalWage = totalWorkingHrs * WAGE_PER_HOUR;
+		System.out.println("Total Wage: "+totalWage );
 	}
 }
