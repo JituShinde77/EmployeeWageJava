@@ -1,5 +1,4 @@
 
-
 public class EmployeeWage{
 	public static void main(String[] args){
 		// Constants
@@ -8,25 +7,30 @@ public class EmployeeWage{
 		int WAGE_PER_HOUR = 20;
 
 		// Variables
-		int empCheck = (int)Math.floor(Math.random() * 10 ) %3;
 		int dailyWage = 0;
 		int empHrs = 0;
+		int totalWage = 0;
 
 		System.out.println("Welcome Wage Employee..");
 		//Computraion
-		switch (empCheck){
-			case 0:
-				empHrs = 0;
-				break;
-			case 1:
-				empHrs = 4;
-				break;
-			case 2:
-				empHrs = 8;
-				break;
-		}
+		for (int i = 0 ; i< 20; i++)
+		{
+			int empCheck = (int)Math.floor(Math.random() * 10 ) %3;
+			switch (empCheck){
+				case 0:
+					empHrs = 0;
+					break;
+				case 1:
+					empHrs = 4;
+					break;
+				case 2:
+					empHrs = 8;
+					break;
+			}
 
-		dailyWage = WAGE_PER_HOUR * empHrs;
-		System.out.println("Employee Daily Wage=" + dailyWage );
+			dailyWage = WAGE_PER_HOUR * empHrs;
+			totalWage = totalWage + dailyWage ;
+		}
+		System.out.println("Month Wage=" + totalWage );
 	}
 }
